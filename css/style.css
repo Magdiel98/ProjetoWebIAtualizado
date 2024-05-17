@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.coluna
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.linha
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.nomesite
+{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+}
+
+
+/*Cor de cabeçalho e de rodapé*/
+.cordefundo
+{
+    background-color: rgb(70, 70, 70);
+}
+
+/*Cor de fundo de botão*/
+.corfundobotao
+{
+    background-color: rgb(144, 238, 144);
+}
+
+.corfundobotao:hover
+{
+    background-color: rgb(95, 171, 95);
+}
+
+
+/*Cor de fundo botão login*/
+.corfundologin{
+    background-color: rgb(173, 216, 230);
+}
+
+.corfundologin:hover{
+    background-color: rgb(55, 152, 184);
+}
+
+
+
+/*Cor de fundo botão cadastro*/
+.corfundocadastro
+{
+    background-color: rgb(252, 227, 89);
+}
+
+.corfundocadastro:hover
+{
+    background-color: rgb(248, 213, 15);
+}
+
+
+/*Títulos em negrito*/
+.negrito
+{
+    font-weight: bold;
+}
+
+/*Tamanho informações*/
+.tamanho
+{
+    font-size: .9rem;
+}
+
+
+.ordempagamento
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgpagamento
+{
+    width: 2.3rem;
+    height: auto;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+
+.corfundohamburguer
+{
+    background-color: rgb(120,120,120);
+}
+
+.corfundohamburguer:hover
+{
+    background-color: rgb(200, 200, 200);
+}
+
+.posicaof
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+@media(max-width:1000px)
+{
+    .displaynavegacao
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .p1
+    {
+        order: 1;
+    }
+
+    .p2
+    {
+        order: 2;
+    }
+
+    .p3
+    {
+        order: 3;
+    }
+}
+
+
+@media(max-width: 995px)
+{
+    .posicaof
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .margemf
+    {
+        margin-right: 5rem;
+    }
+}

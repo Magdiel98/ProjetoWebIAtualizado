@@ -1,0 +1,28 @@
+.duvida
+{
+    width: 40rem;
+}
+
+.tamanho
+{
+    size: 10px;
+}
+
+
+
+
+@media(max-width: 770px)
+{
+    .duvida
+    {
+        width: 30rem;
+    }
+}
+
+@media(max-width: 600px)
+{
+    .duvida
+    {
+        width: 25rem;
+    }
+}
