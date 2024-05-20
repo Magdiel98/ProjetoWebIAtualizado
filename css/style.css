@@ -66,6 +66,19 @@
 }
 
 
+
+/*Cor de fundo botão sair*/
+
+.corfundosair
+{
+    background-color: rgb(239, 67, 75);
+}
+
+.corfundosair:hover
+{
+    background-color: rgb(206, 17, 27);
+}
+
 /*Títulos em negrito*/
 .negrito
 {
@@ -112,6 +125,51 @@
 }
 
 
+.backgroundcirculo
+{
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+button#login
+{
+    display: none;
+}
+
+button#conta
+{
+    display: none;
+}
+
+button#sair
+{
+    display: none;
+}
+
+span#compras
+{
+    display: none;
+}
+
+
+.posicaofixa
+{
+    position: relative; 
+    top: 0; 
+}
+
+
+.corfundosacola
+{
+    background-color: rgb(253, 237, 145);
+}
+
+@media(max-width:1000px)
+{
+   
+}
+
 
 @media(max-width:1000px)
 {
@@ -135,6 +193,23 @@
     {
         order: 3;
     }
+    
+    .posicaobotoes
+    {
+        display: flex; 
+        position: row; 
+    }
+    
+    .p4
+    {
+        order: 4; 
+    }
+
+    .p5
+    {
+        order: 5; 
+    }
+
 }
 
 

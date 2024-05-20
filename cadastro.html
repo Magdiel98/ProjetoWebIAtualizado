@@ -17,6 +17,9 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="js/cadastro.js"></script>
     <script src="js/javascript.js"></script>
 
     <title>Cadastro</title>
@@ -59,14 +62,17 @@
             <hr>
             <form>
                 <div class="row mb-3 g-3">
+
                     <div class="col-6">
                         <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control shadow" id="nome" placeholder="Digite seu Nome" required>
+                        <input type="text" class="form-control shadow" id="nome" placeholder="Digite seu Nome">
                     </div>
+
                     <div class="col-6">
                         <label for="sobrenome" class="form-label">Sobrenome</label>
-                        <input type="text" class="form-control shadow" id="sobrenome" placeholder="Digite seu Sobrenome" required>
+                        <input type="text" class="form-control shadow" id="sobrenome" placeholder="Digite seu Sobrenome">
                     </div>
+
                     <div class="col-6">
                         <label for="sexo" class="form-label">Sexo</label>
                         <select name="sexo" id="sexo" class="form-select shadow">
@@ -75,57 +81,95 @@
                             <option value="">Feminino</option>
                         </select>
                     </div>
+
                     <div class="col-6">
                         <label for="nascimento" class="form-label">Data de Nascimento</label>
-                        <input type="date" id="data" class="form-control shadow" id="nascimento" placeholder="Data de Nascimento" required>
+                        <input type="date" class="form-control shadow" id="nascimento" placeholder="Data de Nascimento">
                     </div>
+
+                    <div id="divemail" class="col-6 mt-5">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control shadow" id="email" placeholder="Digite seu E-mail" onblur="validacaoEmail()">
+
+                    </div>
+
+                    <div id="divemailconfirm" class="col-6 mt-5">
+                        <label for="confirmaremail" class="form-label">Confirmar Email</label>
+                        <input type="email" class="form-control shadow" id="confirmaremail" placeholder="Confirme seu E-mail" onblur="validacaoEmail()">
+                    </div>
+
                     <div class="col-6">
-                        <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control shadow" id="cpf" placeholder="Digite seu CPF" required>
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control shadow" id="senha" placeholder="Digite sua Senha" onblur="validacaoPassword()">
                     </div>
+
+            
+                    <div id="divsenhaconfirm" class="col-6">
+                        <label for="confirmarsenha" class="form-label">Confirmar Senha</label>
+                        <input type="password" class="form-control shadow" id="confirmarsenha" placeholder="Confirme sua Senha" onblur="validacaoPassword(), impressaoPassword()">
+                    </div>
+
+                    <div class="col-6 mt-5">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control shadow" id="cpf" placeholder="Digite seu CPF">
+                    </div>
+
                     <div class="col-6">
 
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-6 mt-5">
                         <label for="telefone" class="form-label">Telefone</label>
                         <input type="text" class="form-control shadow" id="telefone" placeholder="Digite seu Telefone">
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-6 mt-5">
                         <label for="celular" class="form-label">Celular</label>
                         <input type="text" class="form-control shadow" id="celular" placeholder="Digite seu Celular">
                     </div>
-                    <div class="col-6">
+
+                    <div class="col-6 mt-5">
                         <label for="rua" class="form-label">Rua</label>
                         <input type="text" class="form-control shadow" id="rua" placeholder="Digite a Rua">
                     </div>
+
                     <div class="col-6"></div>
+
                     <div class="col-2">
                         <label for="numero" class="form-label">Número</label>
                         <input type="number" class="form-control shadow" id="numero" placeholder="Digite o Número">
                     </div>
+
                     <div>
                         <input type="checkbox" name="semnumero" id="semnumero" class="form-check-input shadow">
                         <label for="semnumero" class="form-label">Sem Número</label>
                     </div>
+
                     <div class="col-6">
                         <label for="complemento" class="form-label">Complemento</label>
                         <input type="text" class="form-control shadow" id="complemento" placeholder="Digite o Complemento">
                     </div>
+
                     <div class="col-6">
                         <label for="referencia" class="form-label">Referência</label>
                         <input type="text" class="form-control shadow" id="referencia" placeholder="Digite a Referência">
                     </div>
+
                     <div class="col-6">
                         <label for="bairro" class="form-label">Bairro</label>
                         <input type="text" class="form-control shadow" id="bairro" placeholder="Digite o Bairro">
                     </div>
+
                     <div class="col-6">
                         <label for="estado" class="form-label">Estado</label>
                         <select name="estado" id="estado" class="form-select shadow">
                             <option value="" disabled selected hidden>Escolha o Estado</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn bg-success text-white mt-5 shadow">Cadastrar</button>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn bg-success text-white mt-5 shadow w-25" id="cadastrar" disabled = "true" onclick="cadastro()">Cadastrar</button>
+                    </div>
                 </div>
             </form>
         </div>

@@ -15,30 +15,24 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/javascript.js"></script>
-    <script src="js/loading.js"></script>
-    
 
-    <title>Login</title>
+    <title>Home</title>
 
 </head>
 <body class="bg-dark-subtle">
     <header class="cordefundo">
         <nav class="navbar navbar-expand-sm navbar-expand-sm">
             <div class="container d-flex justify-content-center coluna">
-                <a href="index.html" class="navbar-brand nomesite text-light">Bela</a>
+                <a href="home.html" class="navbar-brand nomesite text-light">Bela</a>
 
                 <button class="navbar-toggler p3 corfundohamburguer" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-flex displaynavegacao">
+                <div class="d-flex displaynavegacao justify-content-center align-content-center">
                     <div class="collapse navbar-collapse display-flex p3" id="menuNavbar">
                         <div class="navbar-nav">
                             <a href="" class="nav-link active text-light m-xxl-3">Roupas</a>
@@ -53,7 +47,19 @@
                             <input type="search" name="" id="" class="form-control" placeholder="Buscar...">
                             <button type="submit" class="btn btn-outline-sucess corfundobotao">Buscar</button>
                         </div>
-                    </form> 
+                    </form>
+                    <div class="d-flex align-self-center h-25 p5">
+                        <div class="d-flex align-self-center h-25">
+                            <button class="btn rounded-circle shadow corfundologin">
+                                <i class="bi-person" style="font-size: 25px;"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex align-self-center h-25 m-2">
+                            <button class="btn rounded-circle shadow corfundocadastro">
+                                <i class="bi-handbag" style="font-size: 25px;"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -61,32 +67,7 @@
     </header>
     
     <main class="container py-5">
-        <div class="d-flex align-items-center flex-column">
-            <form action="" class="border d-flex flex-column p-5 rounded-3 shadow bg-body-secondary">
-                <h2>Login</h2>
-                <hr>
-                <div id="divemail">
-                    <label for="email" class="col-form-label">E-mail</label>
-                    <input type="email" class="form-control shadow" placeholder="Digite o E-mail" id="email" onblur="validacaoEmail()">
-                </div>
-
-                <div id="divpassword">
-                    <label for="senha" class="col-form-label">Senha</label>
-                    <input type="password" class="form-control shadow" placeholder="Digite a Senha" id="password" onblur="validacaoPassword()">
-                </div>
-
-                <p class="align-self-center mt-2">Esqueceu sua senha?</p> <!-- Adicionar modal ao clicar aqui-->
-               
-                <button type="button" class="btn bg-success text-white" disabled="true" id="entrar" onclick="login()">Entrar</button>
-                <hr>
-                <div class="d-flex flex-row align-self-center">
-                    <button type="button" class="btn m-3 botaoface"><i class="bi-facebook" style="font-size: 20px;"></i> Facebook</button>
-                    <button type="button" class="btn m-3 botaogoogle" ><i class="bi-google" style="font-size: 20px;"></i> Google</button>
-                </div>
-
-                <p class="align-self-center"><a href="cadastro.html" class="text-dark">Cadastre-se</a></p>
-            </form>
-        </div>
+        
     </main>
 
     <footer class="text-center">
@@ -188,7 +169,4 @@
     </footer>
 
 </body>
-
-
-
 </html>
