@@ -1,0 +1,19 @@
+.letra
+{
+    color: white
+}
+
+.estruturaimagem
+{
+    height: 410px;
+    
+}
+
+.posicao
+{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
