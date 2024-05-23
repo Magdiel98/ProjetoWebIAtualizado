@@ -15,17 +15,16 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/categorias.css">
-
+    
+    <link rel="stylesheet" href="css/produto.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-    <script src="js/roupas.js"></script>
     <script src="js/javascript.js"></script>
 
 
-    <title>Roupas</title>
+    <title>Produto</title>
 
 </head>
 <body class="bg-dark-subtle">
@@ -71,20 +70,47 @@
 
     </header>
     
-    <main class="mb-5">
-
-        <div class="backcategoria w-100 d-flex justify-content-center align-content-center">
-            <span class="nomecategoria">Roupas</span> 
-        </div>
-
-        <div class="d-flex justify-content-center align-content-center flex-column mt-5 mb-5">
-            <div class="d-flex justify-content-center align-content-center row row-cols-md-3 row-cols-xl-4 row-cols-2 g-3" id="divroupa">
-
+    <main class="mb-5 d-flex justify-content-center align-content-center mt-5 flex-column">
+        <h1 class="align-self-center">Nome do Produto</h1>
+        <div class="d-flex  align-self-center w-100">
+            <div class="d-flex align-self-center flex-column me-5 ms-5">
+                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=10" alt="">
+                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=11" alt="">
+                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=12" alt="">
+                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=13" alt="">
+                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=14" alt="">
+            </div>
+            <div>
+                <img class="larguraproduto rounded shadow" src="https://picsum.photos/400/400?random=22" alt="">
+            </div>
+            <div class="container">
+                <div class="card col-10 alturacard shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Preço</h5>
+                        <h6 class="card-subtitle">Valor Parcelado</h6>
+                        <div class="d-flex justify-content-center align-content-center">
+                            <button class="btn bg-primary bg-gradient mt-5 w-75"><a class="text-decoration-none text-white" href="tabela.html">Tabela de Medidas</a></button>
+                        </div>
+                        <div class="mt-5">
+                            <h5 class="card-title">Sobre o Produto</h5>
+                            <p class="card-text">
+                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione accusantium distinctio incidunt 
+                               cupiditate voluptates, libero optio! Veritatis, eveniet? Earum non natus quos perferendis libero 
+                               sed provident magni saepe cum laudantium!
+                            </p>
+                        </div>
+                        <div class="quantidade">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                        <div class="d-flex justify-content-center align-content-center">
+                            <button class="btn bg-success bg-gradient mt-5 w-75"><a class="text-decoration-none text-white" href="">Comprar</a></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <button type="button" id="clicar">clicar</button>
-
     </main>
 
     <footer class="text-center">
