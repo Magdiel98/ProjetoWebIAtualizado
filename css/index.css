@@ -15,5 +15,8 @@
     flex-direction: row;
 }
 
-
+button
+{
+    cursor: pointer;
+}
 

@@ -21,10 +21,12 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="js/produto.js"></script>
     <script src="js/javascript.js"></script>
+    
 
 
-    <title>Produto</title>
+    <title>Fitness</title>
 
 </head>
 <body class="bg-dark-subtle">
@@ -74,14 +76,14 @@
         <h1 class="align-self-center">Nome do Produto</h1>
         <div class="d-flex  align-self-center w-100">
             <div class="d-flex align-self-center flex-column me-5 ms-5">
-                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=10" alt="">
-                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=11" alt="">
-                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=12" alt="">
-                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=13" alt="">
-                <img class="rounded shadow mb-2 larguralateral" src="https://picsum.photos/400/400?random=14" alt="">
+                <img class="rounded shadow mb-2 larguralateral caracteristicaimagem" id="img1" src="img/fitness/fitness1.jpg" alt="">
+                <img class="rounded shadow mb-2 larguralateral caracteristicaimagem" id="img2" src="img/fitness/fitness2.jpg" alt="">
+                <img class="rounded shadow mb-2 larguralateral caracteristicaimagem" id="img3" src="img/fitness/fitness3.jpg" alt="">
+                <img class="rounded shadow mb-2 larguralateral caracteristicaimagem" id="img4" src="img/fitness/fitness4.jpg" alt="">
+                <img class="rounded shadow mb-2 larguralateral caracteristicaimagem" id="img5" src="img/fitness/fitness5.jpg" alt="">
             </div>
             <div>
-                <img class="larguraproduto rounded shadow" src="https://picsum.photos/400/400?random=22" alt="">
+                <img class="larguraproduto rounded shadow" id="imgp" src="img/fitness/fitness1.jpg" alt="">
             </div>
             <div class="container">
                 <div class="card col-10 alturacard shadow">
@@ -89,7 +91,7 @@
                         <h5 class="card-title">Preço</h5>
                         <h6 class="card-subtitle">Valor Parcelado</h6>
                         <div class="d-flex justify-content-center align-content-center">
-                            <button class="btn bg-primary bg-gradient mt-5 w-75"><a class="text-decoration-none text-white" href="tabela.html">Tabela de Medidas</a></button>
+                            <button class="btn bg-primary bg-gradient mt-5 w-75"><a class="text-decoration-none text-white" href="tabela.html" target="_blank">Tabela de Medidas</a></button>
                         </div>
                         <div class="mt-5">
                             <h5 class="card-title">Sobre o Produto</h5>
@@ -99,15 +101,28 @@
                                sed provident magni saepe cum laudantium!
                             </p>
                         </div>
-                        <div class="quantidade">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
-                        </div>
-                        <div class="d-flex justify-content-center align-content-center">
-                            <button class="btn bg-success bg-gradient mt-5 w-75"><a class="text-decoration-none text-white" href="">Comprar</a></button>
+                        <div class="d-flex justify-content-center align-content-center w-100 ms-4">
+                            <div class="quantidade mt-5 me-2 rounded pe-4 ps-4 d-flex justify-content-center align-content-center">
+                                <button type = "button" id="menos"><i class="bi-dash"></i></button>
+                                <span class="me-2 ms-2" id="valor">1</span>
+                                <button type = "button" id="mais"><i class="bi-plus"></i></button>
+                            </div>
+                            <div class="d-flex align-content-center mt-2 w-100 h-25 align-self-end">
+                                <button class="btn bg-success bg-gradient w-75 text-white" id="botaocompra">Comprar</button>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div id = "modal">
+            <div class="modal-content d-flex flex-column align-content-center justify-content-center rounded-4">
+                <span class="mt-0" id="fecharModal">&times;</span>
+                <h2 class="align-self-center" style="color: rgb(39, 174, 96); font-size: 1.5rem;">Produto adicionado ao seu carrinho!</h2>
+                <p  class="align-self-center" style="color: rgb(120,120,120)">O que você deseja fazer a seguir?</p>
+                <div class="align-self-center d-flex">
+                    <button class="btn border shadow-sm letramodal" style="color: rgb(120,120,120)" id="continuar">Cotinuar Comprando</button>
+                    <button class="btn border shadow-sm text-white ms-3 letramodal" id="finalizar">Finalizar Compra</button>
                 </div>
             </div>
         </div>
