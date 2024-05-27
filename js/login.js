@@ -148,6 +148,76 @@ function login()
 
 }
 
+/*
+Para fazer logout:
+
+function logout()
+{
+    firebase.auth().signOut();
+}
+
+
+Ou para fazer algumas modificações: 
+function logout()
+{
+    firebase.auth().signOut().then(() => {
+        window.location.href = "../../index.html";
+    })
+    .catch(() => {
+        alert("Erro ao fazer logout");
+    })
+}
+ */
+
+
+/*
+Modificar algumas coisas se o usuário estiver logado
+firebase.auth().onAuthStateChanged(function(user){
+    if(user)
+    {
+        document.title = "PROFILE PAGE";
+
+        document.getElementById("user_div").style.display = "block";
+        document.getElementById("login_div").style.display = "none";
+
+        var user = firebase.auth().currentUser;
+
+        if(user != null)
+        {
+            var email_id = user.email;
+
+            document.getElementById("user_email_from_database").value = email_id;
+        }
+    }
+    else
+    {
+        document.title = "Login Here";
+        document.getElementById("user_div").style.display = "none";
+        document.getElementById("login_div").style.display = "block";
+    }
+});
+
+
+Ou então 
+
+firebase.auth().onAuthStateChanged(function(user){
+    if(user)
+    {
+        window.location.hred = "pages/home/index.html";
+    }
+});
+ */
+
+
+/* 
+    Para quando o usuário não estiver logado: 
+    firebase.auth().onAuthStateChanged(user => {
+        if(!user){
+            window.location.href = "../../index.html";
+        }
+    });
+*/
+
 const firebaseConfig = {
     apiKey: "AIzaSyBtY4MDWZi1jYf5tVgq1bjGiEVcKhYgwMY",
     authDomain: "userlojavirtual.firebaseapp.com",

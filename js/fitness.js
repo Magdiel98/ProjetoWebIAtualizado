@@ -10,7 +10,6 @@ class Categoria{
 }
 
 
-
 document.addEventListener('DOMContentLoaded', listaCategoria)
 
 
@@ -115,5 +114,4 @@ function createCategoriaCard(categoria)
     return divMaior;
 
 }
-
 

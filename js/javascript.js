@@ -1,32 +1,3 @@
-/* 
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => {
-        firebase.auth().onAuthStateChanged((user) => {
-            if(user)
-            {
-                console.log("Usuário está logado:", user);
-            }
-            else
-            {
-                console.log("Usuário não está logado");
-            }
-        });
-    })
-    .catch((error) => {
-        console.error("Erro ao definir persistência de autenticação:", error);
-    });
-
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    let botaopessoa = document.getElementById("pessoa");
-
-    if (botaopessoa) {
-        botaopessoa.addEventListener('click', visibilidade2);
-    }
-
-    // Adicione aqui event listeners adicionais, se necessário
-});
-*/
 
 
 
