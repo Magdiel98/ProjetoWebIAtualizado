@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', (event) =>{
     const modal = document.getElementById('modal');
     const comprar = document.getElementById('botaocompra');
     const fecharModal = document.getElementById('fecharModal');
+    const continuar = document.getElementById('continuar');
+    const finalizar = document.getElementById('finalizar');
 
     comprar.addEventListener('click', () => {
         modal.style.display = 'block';
@@ -67,12 +69,24 @@ document.addEventListener('DOMContentLoaded', (event) =>{
         modal.style.display = 'none';
     });
 
+    continuar.addEventListener('click', ()=>{
+        modal.style.display = 'none';
+    });
+
+    finalizar.addEventListener('click', ()=>{
+        window.location.href = "carrinho.html"; 
+    });
+
     window.addEventListener('click', (event) => {
         if(event.target === modal)
         {
             modal.style.display = 'none';
         }
     }); 
+
+
+
+
 
 });
 

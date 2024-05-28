@@ -15,25 +15,24 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/categorias.css">
-
+    <link rel="stylesheet" href="css/carrinho.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>Acessórios</title>
+    <title>Carrinho</title>
 
 </head>
 <body class="bg-dark-subtle">
     <header class="cordefundo">
         <nav class="navbar navbar-expand-sm navbar-expand-sm">
             <div class="container d-flex justify-content-center coluna">
-                <a href="index.html" class="navbar-brand nomesite text-light">Bela</a>
+                <a href="home.html" class="navbar-brand nomesite text-light">Bela</a>
 
                 <button class="navbar-toggler p3 corfundohamburguer" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="d-flex displaynavegacao">
+                <div class="d-flex displaynavegacao justify-content-center align-content-center">
                     <div class="collapse navbar-collapse display-flex p3" id="menuNavbar">
                         <div class="navbar-nav">
                             <a href="roupas.html" class="nav-link active text-light m-xxl-3">Roupas</a>
@@ -91,18 +90,48 @@
 
     </header>
     
-    <main class="mb-5">
-
-        <div class="backcategoria w-100 d-flex justify-content-center align-content-center">
-            <span class="nomecategoria">Acessórios</span> 
-        </div>
-
-        <div class="d-flex justify-content-center align-content-center flex-column mt-5 mb-5">
-            <div class="d-flex justify-content-center align-content-center row row-cols-md-3 row-cols-xl-4 row-cols-2 g-3" id="acessorios">
-
+    <main class="container py-5">
+        <div class="container">
+            <div class="card col-12 shadow ">
+                <d class="card-body">
+                    <div class="d-flex justify-content-center align-content-center">
+                        <h1 class="card-title" style="color: rgb(150, 150, 150)">Carrinho</h1>
+                    </div>
+                    <div class="d-flex">
+                        <section class="w-75 ms-5">
+                            Listagem de Produtos 
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th class="text-secondary">Produto</th>
+                                        <th class="text-secondary">Preço</th>
+                                        <th class="text-secondary">Quantidade</th>
+                                        <th class="text-secondary">Total</th>
+                                        <th>-</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="corpo">
+                                </tbody>
+                            </table>
+                        </section>
+                        <aside class="w-25 ms-3">
+                            <div class="d-flex flex-column sticky-top" style="background-color: #eee;">
+                                <header class="align-self-center">Resumo da Compra</header>
+                                <hr>
+                                <div class="mb-2 p-2">
+                                    <div class="d-flex justify-content-between"><span style= "color: #555">Sub-total</span><span>R$ 600</span></div>
+                                    <div class="d-flex justify-content-between"><span style="color: #555">Frete</span><span>Gratuito</span></div>
+                                </div>
+                                <footer class="d-flex justify-content-between p-2" style="background-color: #ccc;">
+                                    <span>Total</span><span>R$ 600</span>
+                                </footer>
+                                <button class="btn bg-success rounded-0 text-white mt-2 w-100" id="finalizarcompra">FINALIZAR COMPRA</button>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
             </div>
         </div>
-        
     </main>
 
     <footer class="text-center">
@@ -202,13 +231,14 @@
         </div>
 
     </footer>
-    
+
 </body>
 
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
     <script src="js/firebase-init.js"></script>
+    <script src="js/carrinho.js"></script>
     <script src="js/javascript.js"></script>
-    <script src="js/acessorios.js"></script>
+
 </html>

@@ -203,7 +203,7 @@ Ou então
 firebase.auth().onAuthStateChanged(function(user){
     if(user)
     {
-        window.location.hred = "pages/home/index.html";
+        window.location.href = "pages/home/index.html";
     }
 });
  */

@@ -1,0 +1,21 @@
+.conteudo
+{
+    display: flex; 
+}
+
+.quantidade
+{
+    display: inline-flex;
+    padding: 5px 0; 
+    justify-content: space-around;
+    min-width: 60px;
+    background-color: #ccc;
+
+    button
+    {
+        background: transparent;
+        border: 0;   
+    }
+
+}
+

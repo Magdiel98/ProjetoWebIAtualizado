@@ -10,6 +10,7 @@ class Categoria{
 }
 
 
+
 document.addEventListener('DOMContentLoaded', listaCategoria)
 
 
@@ -29,7 +30,7 @@ function listaCategoria()
 
 function fetchCategoria()
 {
-return fetch('https://produto-d1bb1-default-rtdb.firebaseio.com/roupas.json')
+return fetch('https://produto-d1bb1-default-rtdb.firebaseio.com/praia.json')
     .then(response => {
         if(!response.ok)
         {
@@ -114,4 +115,5 @@ function createCategoriaCard(categoria)
     return divMaior;
 
 }
+
 
