@@ -1,5 +1,18 @@
+firebase.auth().onAuthStateChanged(function(user){
+    if(user)
+    {
+        botaopessoa.addEventListener('click', visibilidade2);
+    }
+    else
+    {
+        botaopessoa.addEventListener('click', visibilidade);
+    }
+});
 
+const botaopessoa = document.getElementById("pessoa");
+const botaosair = document.getElementById("sair");
 
+botaosair.addEventListener("click", logout);
 
 function visibilidade()
 {
@@ -56,14 +69,14 @@ function visibilidadesacola()
 }
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyBtY4MDWZi1jYf5tVgq1bjGiEVcKhYgwMY",
-    authDomain: "userlojavirtual.firebaseapp.com",
-    projectId: "userlojavirtual",
-    storageBucket: "userlojavirtual.appspot.com",
-    messagingSenderId: "321445012310",
-    appId: "1:321445012310:web:92f97698f0c4dd9138acf7",
-    measurementId: "G-4KXBG0D349"
-  };
+function logout()
+{
+    firebase.auth().signOut().then(() => {
+        window.location.href = "index.html";
+    })
+    .catch(() => {
+        alert("Erro ao fazer logout");
+    }) 
+}
 
-firebase.initializeApp(firebaseConfig);
+
