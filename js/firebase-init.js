@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyBtY4MDWZi1jYf5tVgq1bjGiEVcKhYgwMY",
-    authDomain: "userlojavirtual.firebaseapp.com",
-    projectId: "userlojavirtual",
-    storageBucket: "userlojavirtual.appspot.com",
-    messagingSenderId: "321445012310",
-    appId: "1:321445012310:web:92f97698f0c4dd9138acf7",
-    measurementId: "G-4KXBG0D349"
-  };
+  apiKey: "AIzaSyCLaBmEhATx_qOv7Pr3qZuZ1J-66QaC1oM",
+  authDomain: "produto-d1bb1.firebaseapp.com",
+  databaseURL: "https://produto-d1bb1-default-rtdb.firebaseio.com",
+  projectId: "produto-d1bb1",
+  storageBucket: "produto-d1bb1.appspot.com",
+  messagingSenderId: "533020633092",
+  appId: "1:533020633092:web:b499bb37ba0352d113ed51"
+};
 
 firebase.initializeApp(firebaseConfig);

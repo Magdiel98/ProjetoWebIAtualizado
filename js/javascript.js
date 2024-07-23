@@ -1,158 +1,220 @@
-firebase.auth().onAuthStateChanged(function(user){
-    if(user)
-    {
-        botaopessoa.addEventListener('click', visibilidade2);
-    }
-    else
-    {
-        botaopessoa.addEventListener('click', visibilidade);
-    }
-});
+document.addEventListener('DOMContentLoaded', (event) =>{ 
+    
+    const botaopessoa = document.getElementById("pessoa");
+    const botaosair = document.getElementById("sair");
+    let comprasimagem = document.getElementById("comprasimagem");
 
-const botaopessoa = document.getElementById("pessoa");
-const botaosair = document.getElementById("sair");
-let comprasimagem = document.getElementById("comprasimagem");
+    
+            
 
-botaosair.addEventListener("click", logout);
-
-function visibilidade()
-{
-    let botao = document.getElementById("login");
-
-    let estilo = window.getComputedStyle(botao).display;
-
-    if(estilo === 'none')
-    {
-        botao.style.display = 'block';
-    }
-    else
-    {
-        botao.style.display = 'none';
-    }
-
-}
-
-
-function visibilidade2()
-{
-    let botaoconta = document.getElementById("conta");
-    let botaosair = document.getElementById("sair");
-
-    let estiloconta = window.getComputedStyle(botaoconta).display;
-
-    if(estiloconta === 'none')
-    {
-        botaoconta.style.display = 'block';
-        botaosair.style.display = 'block';
-    }
-    else
-    {
-        botaoconta.style.display = 'none';
-        botaosair.style.display = 'none'
-    }
-}
-
-
-
-function visibilidadesacola()
-{
-    let botaosacola = document.getElementById("compras");
-
-    let estilosacola = window.getComputedStyle(botaosacola).display;
-
-    if(estilosacola === 'none')
-    {
-        botaosacola.style.display = 'block';
-        mostrarProdutos();
-    }
-    else
-    {
-        botaosacola.style.display = 'none';
-        while(comprasimagem.firstChild)
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user)
         {
-            comprasimagem.removeChild(comprasimagem.firstChild);
+            botaopessoa.addEventListener('click', visibilidade2);
+        }
+        else
+        {
+            botaopessoa.addEventListener('click', visibilidade);
+        }
+    });
+
+    
+
+    botaosair.addEventListener("click", logout);
+
+    function visibilidade()
+    {
+        let botao = document.getElementById("login");
+
+        let estilo = window.getComputedStyle(botao).display;
+
+        if(estilo === 'none')
+        {
+            botao.style.display = 'block';
+        }
+        else
+        {
+            botao.style.display = 'none';
+        }
+
+    }
+
+
+    function visibilidade2()
+    {
+        let botaoconta = document.getElementById("conta");
+        let botaosair = document.getElementById("sair");
+
+        let estiloconta = window.getComputedStyle(botaoconta).display;
+
+        if(estiloconta === 'none')
+        {
+            botaoconta.style.display = 'block';
+            botaosair.style.display = 'block';
+        }
+        else
+        {
+            botaoconta.style.display = 'none';
+            botaosair.style.display = 'none'
         }
     }
-}
 
 
-function logout()
-{
-    firebase.auth().signOut().then(() => {
-        window.location.href = "index.html";
-    })
-    .catch(() => {
-        alert("Erro ao fazer logout");
-    }) 
-}
+
+    function visibilidadesacola()
+    {
+        let botaosacola = document.getElementById("compras");
+
+        let estilosacola = window.getComputedStyle(botaosacola).display;
+
+        if(estilosacola === 'none')
+        {
+            botaosacola.style.display = 'block';
+            mostrarProdutos();
+        }
+        else
+        {
+            botaosacola.style.display = 'none';
+            while(comprasimagem.firstChild)
+            {
+                comprasimagem.removeChild(comprasimagem.firstChild);
+            }
+        }
+    }
 
 
-function mostrarProdutos()
-{
-    firebase.firestore()
-        .collection('produtos')
-        .get()
-        .then(res => {
-            const produtos = res.docs.map(doc => doc.data());
-            console.log(produtos);
-            addProdutoAdicionados(produtos); 
+    function logout()
+    {
+        firebase.auth().signOut().then(() => {
+            window.location.href = "../index/index.html";
         })
-}
+        .catch(() => {
+            alert("Erro ao fazer logout");
+        }) 
+    }
 
 
 
-function addProdutoAdicionados(produtos)
-{
 
-    produtos.forEach(produto => {
-        const divgrande = document.createElement('div');
-        divgrande.classList.add('mb-2', 'p-2', 'd-flex', 'justify-content-between');
-        divgrande.classList.add('classeproduto');
+    
+    /*
+    function mostrarProdutos()
+    {
+        firebase.firestore()
+            .collection('produtos')
+            .get()
+            .then(res => {
+                const produtos = res.docs.map(doc => doc.data());
+                console.log(produtos);
+                addProdutoAdicionados(produtos); 
+            })
+    }
+    
 
-        const imagem = document.createElement('img');
-        imagem.classList.add('rounded-2');
-        imagem.setAttribute('style', 'height: 70px');
-        imagem.setAttribute('style','width: 50px');
-        imagem.src = produto.imagem; 
 
-        const divcaracteristicas = document.createElement('div');
-        divcaracteristicas.classList.add('align-self-center', 'ms-3');
+    function addProdutoAdicionados(produtos)
+    {
 
-        const divnome = document.createElement('div');
-        divnome.setAttribute('style', 'font-size: 12px');
-        divnome.textContent = produto.nome; 
+        produtos.forEach(produto => {
+            const divgrande = document.createElement('div');
+            divgrande.classList.add('mb-2', 'p-2', 'd-flex', 'justify-content-between');
+            divgrande.classList.add('classeproduto');
 
-        const divcategoria = document.createElement('div');
-        divcategoria.setAttribute('style', 'font-size: 10px');
-        divcategoria.textContent = produto.categoria; 
+            const imagem = document.createElement('img');
+            imagem.classList.add('rounded-2');
+            imagem.setAttribute('style', 'height: 70px');
+            imagem.setAttribute('style','width: 50px');
+            imagem.src = produto.imagem; 
 
-        const divvalor1 = document.createElement('div');
-        divvalor1.classList.add('align-content-center', 'ms-3');
+            const divcaracteristicas = document.createElement('div');
+            divcaracteristicas.classList.add('align-self-center', 'ms-3');
 
-        const divvalor2 = document.createElement('div');
-        divvalor2.setAttribute('style', 'font-size: 10px');
-        divvalor2.textContent = produto.preco;
+            const divnome = document.createElement('div');
+            divnome.setAttribute('style', 'font-size: 12px');
+            divnome.textContent = produto.nome; 
 
-        const divquantidade1 = document.createElement('div');
-        divquantidade1.classList.add('align-content-center', 'ms-3');
+            const divcategoria = document.createElement('div');
+            divcategoria.setAttribute('style', 'font-size: 10px');
+            divcategoria.textContent = produto.categoria; 
 
-        const divquantidade2 = document.createElement('div');
-        divquantidade2.setAttribute('style', 'font-size: 10px');
-        divquantidade2.textContent = produto.quantidade; 
+            const divvalor1 = document.createElement('div');
+            divvalor1.classList.add('align-content-center', 'ms-3');
 
-        divcaracteristicas.appendChild(divnome);
-        divcaracteristicas.appendChild(divcategoria);
+            const divvalor2 = document.createElement('div');
+            divvalor2.setAttribute('style', 'font-size: 10px');
+            divvalor2.textContent = produto.preco;
 
-        divvalor1.appendChild(divvalor2);
+            const divquantidade1 = document.createElement('div');
+            divquantidade1.classList.add('align-content-center', 'ms-3');
 
-        divquantidade1.appendChild(divquantidade2);
+            const divquantidade2 = document.createElement('div');
+            divquantidade2.setAttribute('style', 'font-size: 10px');
+            divquantidade2.textContent = produto.quantidade; 
 
-        divgrande.appendChild(imagem);
-        divgrande.appendChild(divcaracteristicas);
-        divgrande.appendChild(divvalor1);
-        divgrande.appendChild(divquantidade1);
+            divcaracteristicas.appendChild(divnome);
+            divcaracteristicas.appendChild(divcategoria);
 
-        comprasimagem.appendChild(divgrande);
+            divvalor1.appendChild(divvalor2);
 
-    });
-}
+            divquantidade1.appendChild(divquantidade2);
+
+            divgrande.appendChild(imagem);
+            divgrande.appendChild(divcaracteristicas);
+            divgrande.appendChild(divvalor1);
+            divgrande.appendChild(divquantidade1);
+
+            comprasimagem.appendChild(divgrande);
+
+        });
+    }
+
+
+    function usuarioCadastrado()
+    {
+        firebase.firestore()
+            .collection('usuarios')
+            .get()
+            .then(snapshot => {
+                const dados = snapshot.docs.map(doc => doc.data());
+                addDadosUsuario(dados);
+            })
+    }
+
+    function addDadosUsuario(dados)
+    {
+        dados.forEach(dado => {
+            nome.textContent = dado.nome;
+
+            sobrenome.textContent = dado.sobrenome; 
+
+            sexo.textContent = dado.sexo; 
+
+            nascimento.textContent = dado.nascimento;
+
+            email.textContent = dado.email;
+
+            cpf.textContent = dado.cpf; 
+
+            telefone.textContent = dado.telefone; 
+
+            celular.textContent = dado.celular; 
+
+            rua.textContent = dado.rua;
+
+            numero.textContent = dado.numero; 
+
+            complemento.textContent = dado.complemento;
+
+            referencia.textContent = dado.referencia; 
+
+            bairro.textContent = dado.bairro; 
+
+            estado.textContent = dado.estado; 
+        })
+    }
+    */
+
+
+
+
+});
